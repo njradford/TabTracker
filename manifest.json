@@ -1,0 +1,29 @@
+{
+  "name": "Tab Tracker",
+  "content_scripts": [
+    {
+    "js": ["popup.js"],
+    "matches": ["<all_urls>"]
+    }
+  ],
+  "description": "Lorem",
+  "version": "0.0",
+  "permissions": [
+    "activeTab",
+    "webNavigation",
+    "tabs",
+    "storage"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "options_page": "Options_Page/options.html",
+
+  "browser_action": {
+    "default_title": "TabTracker",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}
