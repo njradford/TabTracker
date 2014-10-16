@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head lang="en">
     <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="jquery.animate-colors-min.js"></script>
     <script type="text/javascript" src="options.js"></script>
     <meta charset="UTF-8">
     <title>Tab-Tracker Options!</title>
@@ -140,12 +141,12 @@
 
         .contentCardHits{
             font-size:1.5vw;
-            padding-left:4%;
+            padding-left:3%;
         }
 
         .contentCardMenu{
             width:100%;
-            padding-top: 5%;
+            padding-top: 3%;
             padding-left: 3%;
 
         }
@@ -167,6 +168,88 @@
             font-size:1.5vw;
         }
 
+        .group        {
+            position:relative;
+            margin-bottom:45px;
+        }
+
+        input         {
+            font-size:18px;
+            margin-top:3%;
+            padding:10px 10px 10px 3px;
+            display:block;
+            width:80%;
+            border:none;
+            border-bottom:1px solid #757575;
+        }
+        input:focus{ outline:none; }
+
+        /* LABEL ======================================= */
+        label          {
+            color:#999;
+            font-size:18px;
+            font-weight:normal;
+            position:absolute;
+            pointer-events:none;
+            left:5px;
+            top:10px;
+            transition:0.2s ease all;
+        }
+
+        /* active state */
+        input:focus ~ label, input:valid ~ label     {
+            top:-20px;
+            font-size:14px;
+            color:#5264AE;
+        }
+
+        /* BOTTOM BARS ================================= */
+        .bar  { position:relative; display:block; width:300px; }
+        .bar:before, .bar:after   {
+            content:'';
+            height:2px;
+            width:0;
+            bottom:1px;
+            position:absolute;
+            background:#5264AE;
+            transition:0.2s ease all;
+        }
+        .bar:before {
+            left:50%;
+        }
+        .bar:after {
+            right:50%;
+        }
+
+        /* active state */
+        input:focus ~ .bar:before, input:focus ~ .bar:after {
+            width:50%;
+        }
+
+        /* HIGHLIGHTER ================================== */
+        .highlight {
+        position:absolute;
+        height:60%;
+        width:100px;
+        top:25%;
+        left:0;
+        pointer-events:none;
+        opacity:0.5;
+        }
+
+        /* active state */
+        input:focus ~ .highlight {
+        animation:inputHighlighter 0.3s ease;
+        }
+
+        /* ANIMATIONS ================ */
+        @keyframes inputHighlighter {
+        from  { background:#5264AE; }
+        to    { width:0; background:transparent; }
+
+
+
+
         #footer{
             height:72px;
             width:100%;
@@ -181,19 +264,15 @@
         }
 
         #addURL{
-
         }
 
         #manage{
-            display:none;
         }
 
         #share{
-
         }
 
         #about{
-
         }
 
         #about{
@@ -220,7 +299,7 @@
         <div id="menu">
             <ul>
                 <li id="1">Add URL</li>
-                <li id="2" class="activeButton">Manage</li>
+                <li id="2">Manage</li>
                 <li id="3">Share</li>
                 <li id="4">About</li>
                 <li id="5">Donate</li>
@@ -228,11 +307,31 @@
 
         </div>
 
+        <div class="content" id="addURL">
+            <div class="contentCard">
+                <p class="cardHeader">
+                    Add URL to track
+                </p>
+                <div class="contentCardHits">
+                    Lorem Ipsum dolor
+                </div>
+                <div class="contentCardMenu">
+                    <form>
+                        <div class="group">
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>URL</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
         <div class="content" id="manage">
             <div class="contentCard">
                 <p class="cardHeader">
-                  www.reddit.com
+                    www.reddit.com
                 </p>
                 <div class="contentCardHits">
                     108 visits since 10/13/14
@@ -249,15 +348,82 @@
                     </div>
                 </div>
             </div>
+
+            <div class="contentCard">
+                <p class="cardHeader">
+                    www.penny-arcade.com
+                </p>
+                <div class="contentCardHits">
+                    10 visits since 10/11/14
+                </div>
+                <div class="contentCardMenu">
+                    <div class="contentCardButton">
+                        <p class="button">Reset</p>
+                    </div>
+                    <div class="contentCardButton">
+                        <p class="button">Delete</p>
+                    </div>
+                    <div class="contentCardButton">
+                        <p class="button">Include</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contentCard">
+                <p class="cardHeader">
+                    www.facebook.com
+                </p>
+                <div class="contentCardHits">
+                    8 visits since 10/13/14
+                </div>
+                <div class="contentCardMenu">
+                    <div class="contentCardButton">
+                        <p class="button">Reset</p>
+                    </div>
+                    <div class="contentCardButton">
+                        <p class="button">Delete</p>
+                    </div>
+                    <div class="contentCardButton">
+                        <p class="button">Include</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+
+        <div class="content" id="share">
+            <div class="contentCard">
+                <p class="cardHeader">
+                    Tell your friends
+                </p>
+            </div>
+        </div>
+
+        <div class="content" id="about">
+            <div class="contentCard">
+                <p class="cardHeader">
+                    About Tab-Tracker. . .
+                </p>
+                <div class="contentCardHits">
+                    I personally struggle with staying on task when it comes to day to day projects. I wrote this
+                    app to help myself and also you.
+                </div>
+
+            </div>
+        </div>
+
+        <div class="content" id="donate">
+            <div class="contentCard">
+                <p class="cardHeader">
+                    Give Me Money
+                </p>
+                <div class="contentCardHits">
+                    Organic eggs are expensive
+                </div>
+
+            </div>
+        </div>
 
 
-
-    <div id="footer">
-        <br/>
-        <p>"Tab-Tracker" and all related branding and software</p>
-        <p>&#0169;Nick Radford 2014</p>
     </div>
 
 

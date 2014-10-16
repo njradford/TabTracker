@@ -3,57 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="6068dec9-6179-4abc-bf9e-b44ccaf9bb56" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Options_Page/options.js" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\.idea\.name" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\.idea\compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\.idea\copyright\profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\.idea\encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\.idea\misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\.idea\modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\.idea\scopes\scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\.idea\uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\.idea\vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\.idea\workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\DEPRECATED\background.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\DEPRECATED\options.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\DEPRECATED\popup.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\DEPRECATED\popup.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\DEPRECATED\socket.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\Fonts\Pacifico.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\Fonts\Roboto-Black.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\Fonts\Roboto-BlackItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\Fonts\Roboto-Bold.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\Fonts\Roboto-BoldItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\Fonts\Roboto-Italic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\Fonts\Roboto-Light.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\Fonts\Roboto-LightItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\Fonts\Roboto-Medium.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\Fonts\Roboto-MediumItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\Fonts\Roboto-Regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\Fonts\Roboto-Thin.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\Fonts\Roboto-ThinItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\LICENSE.txt" afterPath="" />
       <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\Options_Page\add_url.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\Options_Page\options.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\TabTracker.iml" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\background.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\chrome-ex-socket-master\.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\chrome-ex-socket-master\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\chrome-ex-socket-master\example\background.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\chrome-ex-socket-master\example\css\style.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\chrome-ex-socket-master\example\img\icon128.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\chrome-ex-socket-master\example\img\icon16.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\chrome-ex-socket-master\example\img\icon48.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\chrome-ex-socket-master\example\img\loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\chrome-ex-socket-master\example\js\jquery-1.7.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\chrome-ex-socket-master\example\js\script.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\chrome-ex-socket-master\example\js\socket.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\chrome-ex-socket-master\example\manifest.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\chrome-ex-socket-master\example\popup.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\jquery-2.1.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\manifest.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\popup.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\popup.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\options\.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE.txt" afterPath="$PROJECT_DIR$/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TabTracker.iml" afterPath="$PROJECT_DIR$/TabTracker.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Options_Page/options.html" afterPath="$PROJECT_DIR$/Options_Page/options.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DEPRECATED/popup.html" afterPath="$PROJECT_DIR$/DEPRECATED/popup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DEPRECATED/popup.js" afterPath="$PROJECT_DIR$/DEPRECATED/popup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\Documents\Programming\Web\Chrome Extensions\tabtracker\jquery-2.1.1.min.js" afterPath="$PROJECT_DIR$/Options_Page/jquery-2.1.1.min.js" />
     </list>
     <ignored path="TabTracker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,21 +42,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="options.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="options.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Options_Page/options.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20700152" vertical-offset="0" max-vertical-offset="4607">
-              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-              <folding />
+            <state vertical-scroll-proportion="-3.8703704" vertical-offset="2409" max-vertical-offset="5984">
+              <caret line="154" column="19" selection-start-line="154" selection-start-column="12" selection-end-line="154" selection-end-column="19" />
+              <folding>
+                <element signature="tag#ul#0;tag#div#0;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#div#1;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#div#2;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="options.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="options.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Options_Page/options.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-              <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+            <state vertical-scroll-proportion="-3.4" vertical-offset="153" max-vertical-offset="850">
+              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -113,8 +83,8 @@
         <option value="$PROJECT_DIR$/options.html" />
         <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/Options_Page/add_url.html" />
-        <option value="$PROJECT_DIR$/Options_Page/options.js" />
         <option value="$PROJECT_DIR$/Options_Page/options.html" />
+        <option value="$PROJECT_DIR$/Options_Page/options.js" />
       </list>
     </option>
   </component>
@@ -200,6 +170,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings />
+    </option>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -493,13 +471,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1552" height="842" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.9817159" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -581,7 +559,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1581" max-vertical-offset="4148">
           <caret line="93" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="238" selection-end-column="7" />
-          <folding />
+          <folding>
+            <element signature="tag#ul#0;tag#div#0;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#1;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#2;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -673,22 +655,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Options_Page/options.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Options_Page/options.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20700152" vertical-offset="0" max-vertical-offset="4607">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        <state vertical-scroll-proportion="-3.8703704" vertical-offset="2409" max-vertical-offset="5984">
+          <caret line="154" column="19" selection-start-line="154" selection-start-column="12" selection-end-line="154" selection-end-column="19" />
+          <folding>
+            <element signature="tag#ul#0;tag#div#0;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#1;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#2;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Options_Page/options.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.4" vertical-offset="153" max-vertical-offset="850">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Python 3.4.0 (C:\Python34\python.exe) interpreter library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>TabTracker</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 
