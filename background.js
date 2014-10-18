@@ -1,31 +1,24 @@
 /**
- * Created by nicholas on 10/13/14.
+ * Aldous
+ * ♫ "Electra Heart" - Marina and the Diamonds
  */
 
 
-var URLDATA;
+var URLDATA = [];
 
+URLDATA[0] = new urlObject;
+URLDATA[1] = new urlObject;
+URLDATA[2] = new urlObject;
 
-myData.push(new urlObject());
-
-
-chrome.storage.sync.set({"test": myData}, function(callback){
-
-    chrome.storage.sync.get("test", function(callback){
-
-        myURL = callback.test[0];
-        myURL.incrementHit();
-        console.log(myURL.hits);
-    });
+chrome.storage.sync.set({"URLS":URLDATA}, function(callback){
 
 });
 
-function urlObject() { // constructor function
-    // properties not initialized to meaningful value
-    this.nickMame = "FB";
+//URL DATA CONTAINER
+function urlObject(){
     this.hits = 0;
     this.url = "www.facebook.com";
-    this.startDate;
+    this.startDate= "10/10/10";
 }
 
 
@@ -58,6 +51,17 @@ function syncUrls(URL_array){
     chrome.storage.sync.set({"URLS":URL_array},function(callback){
         return callback.URLS;
     })
+}
 
+function initial(callback){
+     chrome.storage.sync.get("URLS",function(data){
+        //console.log(data.URLS);
+        callback(data.URLS);
+     })
+
+}
+
+function returnTest(){
+    return 5;
 }
 
