@@ -22,7 +22,8 @@ $(document).ready(function(){
 
         cardURL = $(this).parent().parent().find("p.cardHeader").text();
 
-        console.log($(this).attr('id'));
+        cardID = $(this).find("p").text();
+        console.log("The button: "+cardID+". Has been clicked for URL: "+cardURL);
 
     });
 

@@ -3,9 +3,7 @@
  */
 
 
-var myData = [];
-var myURL;
-
+var URLDATA;
 
 
 myData.push(new urlObject());
@@ -27,8 +25,39 @@ function urlObject() { // constructor function
     this.nickMame = "FB";
     this.hits = 0;
     this.url = "www.facebook.com";
+    this.startDate;
 }
 
-urlObject.prototype.incrementHit = function(){
-    this.hits = this.hits++;
-};
+
+
+//CALLED EVERY TIME A SITE IS VISITED
+function siteVisited(url){
+    //CHECK AGAINST ALL URLS
+
+    //IF PRESENT. INCREMENT.
+
+    //CHROME.SYNC.SET
+
+    //SET URL DATA TO CALLBACK
+}
+
+//ADDS URL TO THE LIST OF URLS TO TRACK
+function addURL(url){
+    //CHECK IF URL IS ALREADY INCLUDED
+
+    //IF NOT, INCLUDE IT IN THE URL
+}
+
+//RETURN WHETHER OF NOT THE URL IS PRESENT INSIDE THE DATA ARRAY
+function checkIfTracking(url){
+
+}
+
+//UPDATE URLS. RETURNS THE UPDATED ARRAY
+function syncUrls(URL_array){
+    chrome.storage.sync.set({"URLS":URL_array},function(callback){
+        return callback.URLS;
+    })
+
+}
+
