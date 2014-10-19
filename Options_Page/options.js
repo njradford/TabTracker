@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
     var URLS;
     chrome.extension.getBackgroundPage().initial(function(data){
         URLS = data;
@@ -7,18 +7,21 @@ $(document).ready(function(){
             console.log(entry.url);
             $(".content#manage").append(buildCard(entry));
         });
-        buttonListeners();
     });
-
-
-
-//CONTENT CARD DIV
 
     $(".content").not("#addURL").css("display","none");
 
+    //ADD AJAX FORM HANDLER
+    $("form").submit(function(e){
+        e.preventDefault();
+        var NEW_URL = $("#URLFORM").find("input").val();
+        console.log(NEW_URL);
+        document.getElementById("URLFORM").reset();
+        chrome.extension.getBackgroundPage().addURL(NEW_URL, addNewCard);
 
+    })
 
-
+    //MENU CLICK HANDLERS
     $("li").click(function(){
         $("li").animate({
             backgroundColor:'white',
@@ -29,9 +32,7 @@ $(document).ready(function(){
             backgroundColor:'#0097a7',
             color:'white'
         },150);
-
         $(".content").hide();
-
         button = $(this).text();
         switch(button) {
             case "Add URL":
@@ -58,13 +59,11 @@ $(document).ready(function(){
                 console.log(button);
         }
     });
-});
 
-//CALLED TO ATTACH JQUERY LISTENERS TO OBJECTS
-function buttonListeners(){
-    $(".contentCardButton").click(function(){
+    //HANDLE LISTENERS FOR CONTENT CARD BUTTONS
+    $("#manage").on("click",".contentCardButton", function(){
         $(this).children().animate({
-              color:"white"
+          color:"white"
           },100,function(){
               $(this).animate({
                   color:'#0097a7'
@@ -80,14 +79,15 @@ function buttonListeners(){
             },100);
         });
 
-
         cardURL = $(this).parent().parent().find("p.cardHeader").text();
 
         cardID = $(this).find("p").text();
         console.log("The button: "+cardID+". Has been clicked for URL: "+cardURL);
+    })
 
-    });
-}
+});
+
+
 
 
 
@@ -110,4 +110,12 @@ function buildCard(URL_OBJECT){
         '</div>'+
     '</div>';
     return CONTENT_CARD;
+}
+
+//ACCEPTS THE URL OBJECT, BUILDS THE CARD, AND APPENDS IT TO THE MANAGE CONTAINER
+function addNewCard(URL_OBJECT){
+
+    $(".content#manage").append(buildCard(URL_OBJECT));
+
+
 }
