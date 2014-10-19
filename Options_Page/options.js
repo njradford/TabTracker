@@ -3,10 +3,12 @@ $(function(){
     chrome.extension.getBackgroundPage().initial(function(data){
         URLS = data;
         //BUILD THE DOM BASED ON DATA FROM THE DB
-        URLS.forEach(function(entry){
-            console.log(entry.url);
-            $(".content#manage").append(buildCard(entry));
-        });
+        if(URLS!=null) {
+            URLS.forEach(function (entry) {
+                console.log(entry.url);
+                $(".content#manage").append(buildCard(entry));
+            });
+        };
     });
 
     $(".content").not("#addURL").css("display","none");
@@ -15,7 +17,6 @@ $(function(){
     $("form").submit(function(e){
         e.preventDefault();
         var NEW_URL = $("#URLFORM").find("input").val();
-        console.log(NEW_URL);
         document.getElementById("URLFORM").reset();
         chrome.extension.getBackgroundPage().addURL(NEW_URL, addNewCard);
 
