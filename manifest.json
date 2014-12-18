@@ -12,7 +12,8 @@
     "activeTab",
     "webNavigation",
     "tabs",
-    "storage"
+    "storage",
+    "background"
   ],
   "background": {
     "scripts": ["background.js"],
