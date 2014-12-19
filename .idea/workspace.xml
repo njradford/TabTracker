@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6068dec9-6179-4abc-bf9e-b44ccaf9bb56" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/background.js" afterPath="$PROJECT_DIR$/background.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DEPRECATED/background.js" afterPath="$PROJECT_DIR$/DEPRECATED/background.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest.json" afterPath="$PROJECT_DIR$/manifest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Options_Page/options.html" afterPath="$PROJECT_DIR$/Options_Page/options.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Options_Page/options.js" afterPath="$PROJECT_DIR$/Options_Page/options.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DEPRECATED/popup.js" afterPath="$PROJECT_DIR$/DEPRECATED/popup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DEPRECATED/socket.js" afterPath="$PROJECT_DIR$/DEPRECATED/socket.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-ex-socket-master/example/js/socket.js" afterPath="$PROJECT_DIR$/chrome-ex-socket-master/example/js/socket.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TabTracker_src.ai" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/icon_128.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/icon_16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/icon_48.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TabTracker.iws" />
@@ -53,10 +48,10 @@
       <file leaf-file-name="options.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Options_Page/options.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55016536" vertical-offset="2459" max-vertical-offset="3366">
-              <caret line="174" column="22" selection-start-line="174" selection-start-column="22" selection-end-line="174" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.6258278" vertical-offset="2459" max-vertical-offset="3366">
+              <caret line="178" column="24" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
               <folding>
-                <marker date="1419031739237" expanded="true" signature="3292:3306" placeholder="..." />
+                <marker date="1419031785625" expanded="true" signature="3292:3306" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -499,7 +494,7 @@
       <workItem from="1418949943361" duration="945000" />
       <workItem from="1418952058896" duration="6636000" />
       <workItem from="1419008673086" duration="1957000" />
-      <workItem from="1419021917675" duration="2488000" />
+      <workItem from="1419021917675" duration="2551000" />
     </task>
     <task id="LOCAL-00001" summary="Went back and documented functions">
       <created>1418871467012</created>
@@ -507,11 +502,17 @@
       <option name="project" value="LOCAL" />
       <updated>1418871467012</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Completed flush/purge function">
+      <created>1419031764605</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1419031764605</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80699000" />
+    <option name="totallyTimeSpent" value="80762000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -520,14 +521,15 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897604" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29588607" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2955032" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.124200426" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -540,7 +542,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39934713" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297062" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -562,7 +563,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Went back and documented functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Went back and documented functions" />
+    <MESSAGE value="Completed flush/purge function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed flush/purge function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -584,7 +586,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2159">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1419031739237" expanded="true" signature="3292:3306" placeholder="..." />
+            <marker date="1419031785625" expanded="true" signature="3292:3306" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -626,7 +628,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="2159">
           <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
           <folding>
-            <marker date="1419031739237" expanded="true" signature="3292:3306" placeholder="..." />
+            <marker date="1419031785625" expanded="true" signature="3292:3306" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -659,7 +661,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="2159">
           <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
           <folding>
-            <marker date="1419031739237" expanded="true" signature="3292:3306" placeholder="..." />
+            <marker date="1419031785625" expanded="true" signature="3292:3306" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -692,7 +694,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="2159">
           <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
           <folding>
-            <marker date="1419031739237" expanded="true" signature="3292:3306" placeholder="..." />
+            <marker date="1419031785625" expanded="true" signature="3292:3306" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -725,7 +727,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="2159">
           <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
           <folding>
-            <marker date="1419031739237" expanded="true" signature="3292:3306" placeholder="..." />
+            <marker date="1419031785625" expanded="true" signature="3292:3306" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -758,7 +760,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2159">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1419031739237" expanded="true" signature="3292:3306" placeholder="..." />
+            <marker date="1419031785625" expanded="true" signature="3292:3306" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -784,7 +786,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="1404">
           <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
           <folding>
-            <marker date="1419031739237" expanded="true" signature="3292:3306" placeholder="..." />
+            <marker date="1419031785625" expanded="true" signature="3292:3306" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -810,7 +812,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="1404">
           <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
           <folding>
-            <marker date="1419031739237" expanded="true" signature="3292:3306" placeholder="..." />
+            <marker date="1419031785625" expanded="true" signature="3292:3306" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -967,10 +969,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Options_Page/options.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55016536" vertical-offset="2459" max-vertical-offset="3366">
-          <caret line="174" column="22" selection-start-line="174" selection-start-column="22" selection-end-line="174" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.6258278" vertical-offset="2459" max-vertical-offset="3366">
+          <caret line="178" column="24" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
           <folding>
-            <marker date="1419031739237" expanded="true" signature="3292:3306" placeholder="..." />
+            <marker date="1419031785625" expanded="true" signature="3292:3306" placeholder="..." />
           </folding>
         </state>
       </provider>
