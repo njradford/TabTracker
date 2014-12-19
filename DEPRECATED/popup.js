@@ -2,23 +2,23 @@ document.addEventListener('DOMContentLoaded', function () {
     drawURLS();
     $(document).ready(function(){
     //DOC READY FUNCTIONS
-        var form = $("#inputForm")
-        var input = $("#urlForm")
+        var form = $("#inputForm");
+        var input = $("#urlForm");
 
         input.click(function(){
             console.log("clicked");
             if(input.val()=="ie www.facebook.com"){
                 input.val("");
             }
-        })
+        });
 
         form.mouseover(function(){
             form.fadeTo(200,1,function(){})
-        })
+        });
 
         form.mouseout(function(){
             form.fadeTo(200,.80,function(){})
-        })
+        });
 
         //HANDLES SUBMITTING VALUES WITHOUT REFRESH
         $("#inputForm").on('submit',function(e){

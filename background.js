@@ -1,10 +1,7 @@
 /**
- * Aldous
- * ♫ "Electra Heart" - Marina and the Diamonds
  *
  * todo: Fix blocking issue that causes background page to go to sleep and take vital logic for the options page with it
  * todo: Create dynamic counter in the Chrome browser action button to show the total tally of site visits
- *
  *
  */
 
@@ -29,7 +26,7 @@ chrome.runtime.onInstalled.addListener(
             }
         })
     }
-)
+);
 
 /**
  * Listens for any time when a tab is updated within in the Chrome instance
@@ -41,10 +38,10 @@ chrome.tabs.onUpdated.addListener(
         //Only register events that are completed
         if(changeInfo.status == "complete") {
 
-            console.log(regexTest(tab.url)+" has completed loading. . .");
+            //console.log(regexTest(tab.url)+" has completed loading. . .");
         }
     }
-)
+);
 
 
 /**
@@ -100,7 +97,11 @@ function addURL(url, callback) {
     //CHECK IF URL IS ALREADY INCLUDED
     //IF NOT, INCLUDE IT IN THE URL
     var URL_OBJ = new urlObject(url);
-    callback(URL_OBJ);
+
+    if(callback != null) {
+        callback(URL_OBJ);
+
+    }
 
     if (URLDATA != null) {
         console.log("Adding new object to URLDATA");
@@ -109,8 +110,7 @@ function addURL(url, callback) {
         console.log("Creating a new URLDATA array");
         URLDATA = [URL_OBJ];
     }
-
-    syncUrls(URLDATA);
+    syncURLS();
 }
 
 /**
@@ -126,9 +126,9 @@ function checkIfTracking(URL) {
  * Pushes the local URL data to the server
  * @param localURLS
  */
-function syncUrls(localURLS) {
+function syncURLS() {
     console.log("SYNCING DATA. . . ");
-    chrome.storage.sync.set({"URLS": URL_array}, function (callback) {
+    chrome.storage.sync.set({"URLS": URLDATA}, function (callback) {
         console.log("SYNCED ");
         chrome.storage.sync.get("URLS", function (callback) {
             console.log(callback.URLS);
@@ -146,10 +146,35 @@ function syncUrls(localURLS) {
  */
 function fetchSyncedURLS(callback) {
     chrome.storage.sync.get("URLS", function (data) {
-        //console.log(data.URLS);
         callback(data.URLS);
         URLDATA = data.URLS;
     })
+}
+
+/**
+ * List tracked URLS
+ */
+function listURLS() {
+
+
+    fetchSyncedURLS(
+        function(URLS){
+            for(i = 0; i < URLS.length; i++) {
+                console.log(URLS[i]);
+            }
+        }
+    )
+
+}
+
+/**
+ * Flushes all of the current URLS from the local and cloud storage
+ *
+ */
+function flushURLS() {
+
+    URLDATA = null;
+    chrome.storage.sync.remove("URLS");
 
 }
 

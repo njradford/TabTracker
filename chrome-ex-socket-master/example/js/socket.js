@@ -37,16 +37,15 @@
 	 */
 	function popupMessageReceived(msg) {
 		window[msg.method](msg.param);
-	};
-	
+	}
 	/**
 	 * Triggered when extension background page receives a message from the extension popup. 
 	 * Executes on the extension background page.
 	 * 
 	 * @param msg A message object.
 	 */
-	function backgroundMessageReceived(msg) {};
-	
+	function backgroundMessageReceived(msg) {
+	}
 	/**
 	 * Triggered when the extension background page receives a new task message. 
 	 * Executes on the extension background page.
@@ -65,24 +64,21 @@
 				param: (Socket.tasks)
 			});
 		}), 2000);
-	};
-	
+	}
 	/**
 	 * Triggered when an extension background task is started. 
 	 * Executes on the extension popup.
 	 */
 	function taskStarted() {
 		showLoading();
-	};
-	
+	}
 	/**
 	 * Triggered when all extension background tasks have been completed. 
 	 * Executes on the extension popup.
 	 */
 	function tasksComplete() {
 		hideLoading();
-	};
-
+	}
 	// ---------------------------------------------------------------------------------------------
 	// WARNING: IF SOURCE IS ALTERED BEYOND THIS POINT THERE IS RISK OF BREAKING SOMETHING. --------
 	// ---------------------------------------------------------------------------------------------

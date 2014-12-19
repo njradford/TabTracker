@@ -13,7 +13,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
     if (changeInfo.status == 'complete') {
         processTab(tab);
     }
-})
+});
 
 function processTab(tab){
     tabUrl = tab.url
@@ -26,7 +26,7 @@ function parseInput(value){
         //CHECK IF POSITION IS EMPTY IN LOCAL STORAGE AND SET.
         if(callback.URLS==null){
             console.log("Adding new url @ "+value);
-            urls = [value]
+            urls = [value];
             chrome.storage.sync.set({'URLS':urls},function(data){});
         } else{
             console.log(callback.URLS.length);
@@ -41,7 +41,7 @@ function parseInput(value){
 function fetchURLS(){
     chrome.storage.sync.get('URLS', function(callback){
         values=callback.URLS;
-    })
+    });
 
     return values;
 }

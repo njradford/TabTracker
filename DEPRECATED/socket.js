@@ -36,36 +36,36 @@
 	 * 
 	 * @param msg A message object.
 	 */
-	function popupMessageReceived(msg) {};
-	
+	function popupMessageReceived(msg) {
+	}
 	/**
 	 * Triggered when extension background page receives a message from the extension popup. 
 	 * Executes on the extension background page.
 	 * 
 	 * @param msg A message object.
 	 */
-	function backgroundMessageReceived(msg) {};
-	
+	function backgroundMessageReceived(msg) {
+	}
 	/**
 	 * Triggered when the extension background page receives a new task message. 
 	 * Executes on the extension background page.
 	 * 
 	 * @param A message object.
 	 */
-	function taskReceived(msg) {};
-	
+	function taskReceived(msg) {
+	}
 	/**
 	 * Triggered when an extension background task is started. 
 	 * Executes on the extension popup.
 	 */
-	function taskStarted() {};
-	
+	function taskStarted() {
+	}
 	/**
 	 * Triggered when all extension background tasks have been completed. 
 	 * Executes on the extension popup.
 	 */
-	function tasksComplete() {};
-
+	function tasksComplete() {
+	}
 	// ---------------------------------------------------------------------------------------------
 	// WARNING: IF SOURCE IS ALTERED BEYOND THIS POINT THERE IS RISK OF BREAKING SOMETHING. --------
 	// ---------------------------------------------------------------------------------------------
