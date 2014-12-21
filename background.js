@@ -1,7 +1,6 @@
 /**
  *
- * todo: Fix blocking issue that causes background page to go to sleep and take vital logic for the options page with it
- * todo: Create dynamic counter in the Chrome browser action button to show the total tally of site visits
+ * todo: Change date setting functions to be relative to the local time, rather than the global time
  *
  */
 
@@ -10,12 +9,18 @@ var URLDATA;
 
 var sessionDict = {};
 
+var hitCount;
+
+
+
+
 
 /**
  * Runs whenever Chrome first starts or whenever the extension is reloaded.
  */
 chrome.runtime.onInstalled.addListener(
     function () {
+
         console.log("Tab Tracker background page starting");
         chrome.storage.sync.get("URLS", function (callback) {
             console.log(callback.URLS);
@@ -24,6 +29,8 @@ chrome.runtime.onInstalled.addListener(
             } else {
                 console.log("NO CLOUD DATA FOUND");
             }
+            chrome.browserAction.setBadgeBackgroundColor({color:"#000000"});
+            calculateHits();
         })
     }
 );
@@ -38,7 +45,23 @@ chrome.tabs.onUpdated.addListener(
         //Only register events that are completed
         if(changeInfo.status == "complete") {
 
-            //console.log(regexTest(tab.url)+" has completed loading. . .");
+            currentURL = regex(tab.url);    
+
+            fetchSyncedURLS(function(data){
+
+                for (i = 0; i < data.length; i++) {
+
+                    if(data[i].url == currentURL) {
+                        data[i].hits++;
+
+                        URLDATA = data;
+                        syncURLS();
+
+                        calculateHits();
+
+                    }
+                }
+            })
         }
     }
 );
@@ -49,7 +72,7 @@ chrome.tabs.onUpdated.addListener(
  * @param inputUrl
  * @returns {*}
  */
-function regexTest(inputUrl) {
+function regex(inputUrl) {
 
     var txt = inputUrl;
 
@@ -73,7 +96,8 @@ function regexTest(inputUrl) {
  */
 function urlObject(url) {
     this.hits = 0;
-    this.startDate = "10/10/10";
+    d = new Date();
+    this.startDate = d.getUTCMonth()+"/"+d.getUTCDate()+"/"+d.getUTCFullYear();
 
     if (url != null) {
         this.url = url;
@@ -145,6 +169,7 @@ function syncURLS() {
  * @param callback
  */
 function fetchSyncedURLS(callback) {
+
     chrome.storage.sync.get("URLS", function (data) {
         callback(data.URLS);
         URLDATA = data.URLS;
@@ -166,6 +191,42 @@ function listURLS() {
     )
 
 }
+/**
+ * Accepts a specific URL and resets it's counter
+ * @param URL
+ */
+function resetURL(URL) {
+
+    fetchSyncedURLS(function(data){
+
+        for( i = 0; i < data.length; i++ ) {
+            if( data[i].url == URL){
+                data[1].hits  = 0;
+                URLDATA = data;
+                syncURLS();
+            }
+        }
+    })
+}
+
+/**
+ * Accepts a specific URL and removes it from the database of tracked URLS
+ * @param URL
+ */
+function removeURL(URL) {
+
+    fetchSyncedURLS(function(data){
+
+        for( i = 0; i < data.length; i++ ) {
+            if( data[i].url == URL){
+                data.splice(i, 1);
+                URLDATA = data;
+                syncURLS();
+            }
+        }
+    })
+}
+
 
 /**
  * Flushes all of the current URLS from the local and cloud storage
@@ -175,8 +236,45 @@ function flushURLS() {
 
     URLDATA = null;
     chrome.storage.sync.remove("URLS");
+    calculateHits();
 
 }
+
+
+/**
+ * Iterates over the hit counts for all tracked URLS and updates the badge view
+ * for the browser action.
+ */
+function calculateHits(){
+
+    hitCount = 0;
+
+    if(URLDATA != null) {
+
+        for( i = 0; i < URLDATA.length; i++ ) {
+            hitCount += URLDATA[i].hits;
+        }
+
+    }
+
+    chrome.browserAction.setBadgeText({text:hitCount.toString()});
+
+
+    if(hitCount+1>25) {
+
+        chrome.notifications.create("Tab Tracker", {
+
+            type:"basic", iconUrl:"notification.png", title:"Friendly Reminder", message:"You've visited a blocked site "+hitCount.toString()+" times."
+
+
+        }, function(){
+            console.log("Notification Created")
+        });
+
+    }
+}
+
+
 
 
 

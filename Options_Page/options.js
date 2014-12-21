@@ -6,7 +6,7 @@ $(function(){
     /**
      * AJAX method to prevent form from resetting the page on submit
      */
-    $("form").submit(function(e){
+    $("#URLFORM").submit(function(e){
         e.preventDefault();
         var NEW_URL = $("#URLFORM").find("input").val();
 
@@ -79,11 +79,27 @@ $(function(){
             },100);
         });
 
-        cardURL = $(this).parent().parent().find("p.cardHeader").text();
+        /*cardURL = $(this).parent().parent().find("p.cardHeader").text();
 
         cardID = $(this).find("p").text();
-        console.log("The button: "+cardID+". Has been clicked for URL: "+cardURL);
+        console.log("The button: "+cardID+". Has been clicked for URL: "+cardURL);*/
     })
+
+    $("#manage").on("click", "p#reset.button", function(){
+
+        console.log("Reset clicked");
+    });
+
+    $("#manage").on("click", "p#reset.button", function(){
+
+        console.log("Reset clicked");
+    });
+
+    $("#manage").on("click", "p#reset.button", function(){
+
+        console.log("Reset clicked");
+    });
+
 
 });
 
@@ -115,6 +131,7 @@ function buildManagePage() {
 
             });
 
+
         } else if (URLS == null){
             $(".content#manage").append(
                 '<div class = "contentCard" >'+
@@ -124,8 +141,6 @@ function buildManagePage() {
             );
         }
     });
-
-
 }
 
 
@@ -180,13 +195,7 @@ function purgeURLS() {
     })
 }
 
-/**
- * Accepts a specific URL and removes it from the database of tracked URLS
- * @param URL
- */
-function resetURL(URL) {
 
 
-}
 
 
