@@ -97,6 +97,10 @@ function regex(inputUrl) {
 function urlObject(url) {
     this.hits = 0;
     d = new Date();
+
+    this.dates = {};
+
+
     this.startDate = d.getUTCMonth()+"/"+d.getUTCDate()+"/"+d.getUTCFullYear();
 
     if (url != null) {
@@ -260,7 +264,7 @@ function calculateHits(){
     chrome.browserAction.setBadgeText({text:hitCount.toString()});
 
 
-    if(hitCount+1>25) {
+    if(hitCount+1>6) {
 
         chrome.notifications.create("Tab Tracker", {
 
