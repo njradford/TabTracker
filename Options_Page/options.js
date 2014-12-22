@@ -189,7 +189,7 @@ var purgeOption =
  */
 function purgeURLS() {
     console.log("PURGING . . .");
-    chrome.extension.getBackgroundPage().flushURLS();
+    chrome.extension.getBackgroundPage().resetURLS();
     $(".content#manage").fadeOut("slow", function(){
         $(this).empty();
     })

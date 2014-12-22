@@ -1,18 +1,12 @@
-/**
- *
- * todo: Change date setting functions to be relative to the local time, rather than the global time
- *
- */
-
-
 var URLDATA;
-
 var sessionDict = {};
-
 var hitCount;
+var threshHold;
 
 
-
+/**
+ * todo:Switch the specification of URL matching to check more than the Root domain.
+ */
 
 
 /**
@@ -29,7 +23,7 @@ chrome.runtime.onInstalled.addListener(
             } else {
                 console.log("NO CLOUD DATA FOUND");
             }
-            chrome.browserAction.setBadgeBackgroundColor({color:"#000000"});
+            chrome.browserAction.setBadgeBackgroundColor({color: "#000000"});
             calculateHits();
         })
     }
@@ -39,20 +33,30 @@ chrome.runtime.onInstalled.addListener(
  * Listens for any time when a tab is updated within in the Chrome instance
  */
 chrome.tabs.onUpdated.addListener(
-
-    function(tabId, changeInfo, tab) {
+    function (tabId, changeInfo, tab) {
 
         //Only register events that are completed
-        if(changeInfo.status == "complete") {
+        if (changeInfo.status == "complete") {
 
-            currentURL = regex(tab.url);    
+            currentURL = regex(tab.url);
 
-            fetchSyncedURLS(function(data){
+            fetchSyncedURLS(function (data) {
 
                 for (i = 0; i < data.length; i++) {
 
-                    if(data[i].url == currentURL) {
+                    if (data[i].url == currentURL) {
                         data[i].hits++;
+
+                        if (data[i].dates == null) {
+
+                            data[i].dates = [Date.now()]
+
+                        } else {
+
+                            data[i].dates.push(Date.now());
+
+                        }
+
 
                         URLDATA = data;
                         syncURLS();
@@ -98,10 +102,10 @@ function urlObject(url) {
     this.hits = 0;
     d = new Date();
 
-    this.dates = {};
+    this.dates = [];
 
 
-    this.startDate = d.getUTCMonth()+"/"+d.getUTCDate()+"/"+d.getUTCFullYear();
+    this.startDate = d.getUTCMonth() + "/" + d.getUTCDate() + "/" + d.getUTCFullYear();
 
     if (url != null) {
         this.url = url;
@@ -126,7 +130,7 @@ function addURL(url, callback) {
     //IF NOT, INCLUDE IT IN THE URL
     var URL_OBJ = new urlObject(url);
 
-    if(callback != null) {
+    if (callback != null) {
         callback(URL_OBJ);
 
     }
@@ -187,8 +191,8 @@ function listURLS() {
 
 
     fetchSyncedURLS(
-        function(URLS){
-            for(i = 0; i < URLS.length; i++) {
+        function (URLS) {
+            for (i = 0; i < URLS.length; i++) {
                 console.log(URLS[i]);
             }
         }
@@ -201,11 +205,11 @@ function listURLS() {
  */
 function resetURL(URL) {
 
-    fetchSyncedURLS(function(data){
+    fetchSyncedURLS(function (data) {
 
-        for( i = 0; i < data.length; i++ ) {
-            if( data[i].url == URL){
-                data[1].hits  = 0;
+        for (i = 0; i < data.length; i++) {
+            if (data[i].url == URL) {
+                data[1].hits = 0;
                 URLDATA = data;
                 syncURLS();
             }
@@ -219,10 +223,10 @@ function resetURL(URL) {
  */
 function removeURL(URL) {
 
-    fetchSyncedURLS(function(data){
+    fetchSyncedURLS(function (data) {
 
-        for( i = 0; i < data.length; i++ ) {
-            if( data[i].url == URL){
+        for (i = 0; i < data.length; i++) {
+            if (data[i].url == URL) {
                 data.splice(i, 1);
                 URLDATA = data;
                 syncURLS();
@@ -236,7 +240,7 @@ function removeURL(URL) {
  * Flushes all of the current URLS from the local and cloud storage
  *
  */
-function flushURLS() {
+function resetURLS() {
 
     URLDATA = null;
     chrome.storage.sync.remove("URLS");
@@ -249,29 +253,32 @@ function flushURLS() {
  * Iterates over the hit counts for all tracked URLS and updates the badge view
  * for the browser action.
  */
-function calculateHits(){
+function calculateHits() {
 
     hitCount = 0;
 
-    if(URLDATA != null) {
+    if (URLDATA != null) {
 
-        for( i = 0; i < URLDATA.length; i++ ) {
+        for (i = 0; i < URLDATA.length; i++) {
             hitCount += URLDATA[i].hits;
         }
 
     }
 
-    chrome.browserAction.setBadgeText({text:hitCount.toString()});
+    chrome.browserAction.setBadgeText({text: hitCount.toString()});
 
 
-    if(hitCount+1>6) {
+    if (hitCount + 1 > 6) {
 
         chrome.notifications.create("Tab Tracker", {
 
-            type:"basic", iconUrl:"notification.png", title:"Friendly Reminder", message:"You've visited a blocked site "+hitCount.toString()+" times."
+            type: "basic",
+            iconUrl: "notification.png",
+            title: "Friendly Reminder",
+            message: "You've visited a blocked site " + hitCount.toString() + " times."
 
 
-        }, function(){
+        }, function () {
             console.log("Notification Created")
         });
 
