@@ -1,0 +1,101 @@
+/** Local font file import */
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('/Fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('/Fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url('/Fonts/Pacifico.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Italic';
+    src: url('/Fonts/Roboto-Italic.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('/Fonts/Roboto-Italic.ttf');
+}
+
+/** Styling reset*/
+* {
+    padding: 0%;
+    margin: 0%;
+    border-style:dotted;
+    border-color:red;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: white;
+}
+
+li {
+    font-family: 'Roboto-Light', sans-serif;
+    text-align: center;
+    background-color: white;
+    color: #0097a7;
+    margin-top: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 18pt;
+    box-shadow: 0px 1px 2px #1F1F1F;
+    list-style-type: none;
+    width: 100%
+}
+
+.content {
+    display: block;
+    color: white;
+    border-radius: 2px;
+
+}
+
+
+ul#menu{
+    float:left;
+    display:block;
+    margin-left: 30px;
+    margin-top: 30px;
+    height: 100%;
+    width:200px;
+}
+
+
+
+#header {
+    font-size: 24pt;
+    color: white;
+    font-family: 'Pacifico';
+    background-color: #0097a7;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px 2.25px 3px #292929;
+}
+
+.contentCard {
+    background-color: white;
+    color: darkslategray;
+    border-radius: 2px;
+    font-family: Roboto-Light;
+    padding-bottom: 3%;
+    box-shadow: 0px 1px 2px #1F1F1F;
+
+}
+
+h1 {
+    color: rgba(0, 0, 0, 0.76);
+    padding-left: 3%;
+    padding-top: 2%;
+    font-size: 24pt;
+    text-align: left;
+}
+

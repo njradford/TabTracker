@@ -21,7 +21,7 @@
     "persistent": true
   },
 
-  "options_page": "Options_Page/options.html",
+  "options_page": "Options_Page/options_new.html",
 
   "browser_action": {
     "default_title": "TabTracker",
