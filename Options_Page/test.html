@@ -31,78 +31,65 @@
             src: url('/Fonts/Roboto-Italic.ttf');
         }
 
-
-        *{
-
-            margin:0;
-            padding:0;
-
+        * {
+            margin: 0;
+            padding: 0;
         }
 
-
-        h1{
-
+        h1#header {
             font-size: 36px;
             color: ghostwhite;
             text-align: center;
-            width:100%;
-            height:80px;
+            width: 100%;
+            height: 80px;
             background-color: #0097a7;
             font-family: 'Pacifico';
-
         }
 
-        body{
-            background-color:#f5f5f5;
-            overflow: scroll;
+        body {
+            width: 100%;
+            background-color: #f5f5f5;
         }
 
-        #nav > li{
+        #nav > li {
             font-family: 'Roboto-Light', sans-serif;
             text-align: center;
             background-color: white;
             color: #0097a7;
             padding-top: 5%;
             padding-bottom: 5%;
-            font-size: 18pt;
+            font-size: 16pt;
             box-shadow: 0px 1px 2px #1F1F1F;
             list-style-type: none;
             width: 100%;
             margin-top: 5px;
         }
 
-        #body > ul{
-
+        #body > ul {
 
         }
 
-        #nav{
+        #nav {
             display: inline-block;
-            width: 20%;;
-            margin-left:15px;
+
+            width: 250px;
+            margin-left: 15px;
             border-radius: 2px;
-            margin-top:20px;
+            margin-top: 20px;
         }
 
-        ul{
+        ul {
             list-style: none;
-
-
         }
 
-
-        #body{
-
-            min-width: 430px;
-            max-width: 740px;
-            width: 55%;
+        #body {
             display: inline-block;
-            margin-top:20px;
+            width: 800px;
+            margin-top: 20px;
             vertical-align: top;
         }
 
-        h2{
-            overflow: auto;
+        h2 {
             font-family: 'Roboto-Light', sans-serif;
             text-align: left;
             color: darkslategray;
@@ -112,7 +99,7 @@
             padding-left: 3%;
         }
 
-        h3{
+        h3 {
             font-family: 'Roboto-Light', sans-serif;
             text-align: left;
             color: darkslategray;
@@ -122,15 +109,15 @@
             padding-left: 3%;
         }
 
-        .card{
+        .card {
             box-shadow: 0px 1px 2px #1F1F1F;
             height: 200px;
-            margin-top:10px;
+            margin-top: 10px;
             margin-left: 10px;
-            background-color:white;
+            background-color: white;
         }
 
-        button{
+        button {
 
             margin-top: 3%;
             margin-left: 2%;
@@ -140,45 +127,38 @@
             border-style: none;
             box-shadow: 0px 1px 2px #1F1F1F;
             color: #0097a7;
-
             font-size: 18px;
-
             background-color: white;
 
-
         }
 
-        ::-webkit-scrollbar {
-            height: 10px;
-            width: 100%;
-
-        }
 
     </style>
 
 </head>
 <body>
 
-<h1>
+<h1 id="header">
     Tab-Tracker
 </h1>
 
-<ul id = "nav">
-    <li> Add </li>
+<ul id="nav">
+    <li> Add</li>
     <li> Remove</li>
     <li> Manage</li>
-    <li> About </li>
+    <li> About</li>
 </ul>
 
-<ul id = "body">
-    <li id = "BodyAdd">
+<ul id="body">
+    <li id="BodyAdd">
 
 
-        <div class = "card">
+        <div class="card">
             <h2>
-                www.reddit.com/r/marijuanaenthusiasts
+                www.reddit.com/r/deoxyribonucleicacid
 
             </h2>
+
             <h3>
 
                 234 Hits
@@ -196,11 +176,12 @@
 
         </div>
 
-        <div class = "card">
+        <div class="card">
             <h2>
                 www.facebook.com
 
             </h2>
+
             <h3>
 
                 234 Hits
