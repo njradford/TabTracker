@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+
+        @font-face {
+            font-family: 'Roboto-Regular';
+            src: url('/Fonts/Roboto-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: 'Roboto-Light';
+            src: url('/Fonts/Roboto-Light.ttf');
+        }
+
+        @font-face {
+            font-family: 'Pacifico';
+            src: url('/Fonts/Pacifico.ttf');
+        }
+
+        @font-face {
+            font-family: 'Roboto-Italic';
+            src: url('/Fonts/Roboto-Italic.ttf');
+        }
+
+        @font-face {
+            font-family: 'Roboto-Bold';
+            src: url('/Fonts/Roboto-Italic.ttf');
+        }
+
+
+        *{
+
+            margin:0;
+            padding:0;
+
+        }
+
+
+        h1{
+
+            color: ghostwhite;
+            text-align: center;
+            width:100%;
+            height:80px;
+            background-color: #0097a7;
+            font-family: 'Pacifico';
+
+        }
+
+        body{
+            background-color:#f5f5f5;
+        }
+
+        #nav > li{
+            font-family: 'Roboto-Light', sans-serif;
+            text-align: center;
+            background-color: white;
+            color: #0097a7;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            font-size: 18pt;
+            box-shadow: 0px 1px 2px #1F1F1F;
+            list-style-type: none;
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        #body > ul{
+
+
+        }
+
+        #nav{
+            display: inline-block;
+            width: 20%;;
+            margin-left:15px;
+            border-radius: 2px;
+            margin-top:20px;
+        }
+
+        ul{
+            list-style: none;
+
+
+        }
+
+
+        #body{
+
+            max-width: 740px;
+            width: 55%;
+            display: inline-block;
+            background-color: white;
+            margin-top:20px;
+            vertical-align: top;
+        }
+
+        h2{
+            font-family: 'Roboto-Light', sans-serif;
+            text-align: left;
+            color: darkslategray;
+            font-size: 32pt;
+            width: 100%;
+            font-weight: normal;
+            padding-left: 3%;
+        }
+
+        h3{
+            font-family: 'Roboto-Light', sans-serif;
+            text-align: left;
+            color: darkslategray;
+            font-size: 26pt;
+            width: 100%;
+            font-weight: normal;
+            padding-left: 3%;
+        }
+
+        .card{
+            box-shadow: 0px 1px 2px #1F1F1F;
+            height: 200px;
+            margin-left: 10px;
+        }
+
+        button{
+
+            margin-top: 3%;
+            margin-left: 2%;
+            display: inline-block;
+            width: 20%;
+            height: 30%;
+            border-style: none;
+            box-shadow: 0px 1px 2px #1F1F1F;
+            color: #0097a7;
+
+            font-size: 18px;
+
+            background-color: white;
+
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+<h1>
+    Tab-Tracker
+</h1>
+
+<ul id = "nav">
+    <li> Add </li>
+    <li> Remove</li>
+    <li> Manage</li>
+    <li> About </li>
+</ul>
+
+<ul id = "body">
+    <li id = "BodyAdd">
+
+
+        <div class = "card">
+            <h2>
+                www.reddit.com
+
+            </h2>
+            <h3>
+
+                234 Hits
+            </h3>
+
+            <button>
+                Remove
+            </button>
+            <button>
+                Reset
+            </button>
+            <button>
+                Graph
+            </button>
+
+        </div>
+
+        <div class = "card">
+            <h2>
+                www.facebook.com
+
+            </h2>
+            <h3>
+
+                234 Hits
+            </h3>
+
+            <button>
+                Remove
+            </button>
+            <button>
+                Reset
+            </button>
+            <button>
+                Graph
+            </button>
+
+        </div>
+
+
+    </li>
+
+
+</ul>
+
+</body>
+</html>
