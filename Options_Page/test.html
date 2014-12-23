@@ -42,6 +42,7 @@
 
         h1{
 
+            font-size: 36px;
             color: ghostwhite;
             text-align: center;
             width:100%;
@@ -53,6 +54,7 @@
 
         body{
             background-color:#f5f5f5;
+            overflow: scroll;
         }
 
         #nav > li{
@@ -91,20 +93,21 @@
 
         #body{
 
+            min-width: 430px;
             max-width: 740px;
             width: 55%;
             display: inline-block;
-            background-color: white;
             margin-top:20px;
             vertical-align: top;
         }
 
         h2{
+            overflow: auto;
             font-family: 'Roboto-Light', sans-serif;
             text-align: left;
             color: darkslategray;
-            font-size: 32pt;
-            width: 100%;
+            font-size: 26pt;
+            width: 90%;
             font-weight: normal;
             padding-left: 3%;
         }
@@ -122,7 +125,9 @@
         .card{
             box-shadow: 0px 1px 2px #1F1F1F;
             height: 200px;
+            margin-top:10px;
             margin-left: 10px;
+            background-color:white;
         }
 
         button{
@@ -140,6 +145,12 @@
 
             background-color: white;
 
+
+        }
+
+        ::-webkit-scrollbar {
+            height: 10px;
+            width: 100%;
 
         }
 
@@ -165,7 +176,7 @@
 
         <div class = "card">
             <h2>
-                www.reddit.com
+                www.reddit.com/r/marijuanaenthusiasts
 
             </h2>
             <h3>
