@@ -2,9 +2,14 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
-    <style>
 
+    <script type="text/javascript" src="libs/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="libs/jquery.animate-colors-min.js"></script>
+    <script type="text/javascript" src="test.js"></script>
+    <script src="libs/Chart.js/Chart.js"></script>
+
+    <title>Tab - Tracker | Options </title>
+    <style>
 
         @font-face {
             font-family: 'Roboto-Regular';
@@ -32,178 +37,285 @@
         }
 
         * {
+
             margin: 0;
             padding: 0;
         }
 
-        h1#header {
-            font-size: 36px;
-            color: ghostwhite;
-            text-align: center;
-            width: 100%;
-            height: 80px;
-            background-color: #0097a7;
-            font-family: 'Pacifico';
-        }
-
         body {
-            width: 100%;
-            background-color: #f5f5f5;
+
+            background-color: ghostwhite;
         }
 
-        #nav > li {
-            font-family: 'Roboto-Light', sans-serif;
+        #header {
+            width: 100%;
+            background-color: #0097a7;
+            height: 80px;
+            font-family: Pacifico;
+            font-size: 30pt;
+            color: white;
             text-align: center;
-            background-color: white;
-            color: #0097a7;
-            padding-top: 5%;
-            padding-bottom: 5%;
-            font-size: 16pt;
-            box-shadow: 0px 1px 2px #1F1F1F;
-            list-style-type: none;
-            width: 100%;
-            margin-top: 5px;
-        }
+            box-shadow: 0px 2.25px 3px #3B3B3B;
 
-        #body > ul {
+            margin: auto;
 
         }
 
         #nav {
-            display: inline-block;
 
-            width: 250px;
-            margin-left: 15px;
-            border-radius: 2px;
-            margin-top: 20px;
+            padding-top: 3%;
+            width: 180px;
+            color: white;
+            display: inline-block;
         }
 
-        ul {
+        #content {
+            color: white;
+            width: 600px;
+            display: inline-block;
+            padding-left: 1%;;
+            padding-top: 3%;
+            vertical-align: top;
+
+        }
+
+        #container {
+            width: 900px;
+            margin: auto;
+
+        }
+
+
+        #content li{
+
+            display: block;
+        }
+
+        li {
             list-style: none;
         }
 
-        #body {
-            display: inline-block;
-            width: 800px;
-            margin-top: 20px;
-            vertical-align: top;
+        .contentCard {
+
+            background-color: white;
+            color: darkslategray;
+            border-radius: 2px;
+            font-family: Roboto-Light;
+            box-shadow: 0 1px 2px #1F1F1F;
+            margin-bottom: 2%;
+            padding: 5%;
+            padding-right: 0%;;
+            padding-top:2%;
+            padding-left: 0%;;
+
+
         }
 
         h2 {
             font-family: 'Roboto-Light', sans-serif;
             text-align: left;
             color: darkslategray;
-            font-size: 26pt;
+            font-size: 28pt;
             width: 90%;
             font-weight: normal;
-            padding-left: 3%;
+            margin-left: 5%;
+
+        }
+
+        h2::-webkit-scrollbar {
+            height: 5px;;
+            background-color: lightgray;
+
+        }
+
+        h2::-webkit-scrollbar-thumb {
+            background-color: darkgray;
+            border-radius: 5px;
+        }
+
+        h2::-webkit-scrollbar-thumb:hover {
+            background-color: #0097a7;
+            border: 1px solid #0097a7;
+
         }
 
         h3 {
             font-family: 'Roboto-Light', sans-serif;
             text-align: left;
             color: darkslategray;
-            font-size: 26pt;
-            width: 100%;
+            font-size: 18pt;
+            width: 90%;
             font-weight: normal;
-            padding-left: 3%;
         }
 
-        .card {
-            box-shadow: 0px 1px 2px #1F1F1F;
-            height: 200px;
-            margin-top: 10px;
-            margin-left: 10px;
-            background-color: white;
+        .contentCard h3{
+
+            margin-bottom: 5%;
+            margin-left: 5%;
         }
 
-        button {
-
-            margin-top: 3%;
-            margin-left: 2%;
-            display: inline-block;
-            width: 20%;
-            height: 30%;
-            border-style: none;
-            box-shadow: 0px 1px 2px #1F1F1F;
-            color: #0097a7;
+        .contentCard button{
+            font-family: 'Roboto-Light', sans-serif;
+            box-shadow: 0 1px 2px #1F1F1F;
             font-size: 18px;
+            margin-right: 10px;
+            border-style: none;
             background-color: white;
+            width:100px;
+            height:45px;
 
         }
 
+        button:focus{
+
+            outline:none;
+        }
+
+
+        button{
+            font-family: 'Roboto-Light', sans-serif;
+            box-shadow: 0 1px 2px #1F1F1F;
+            font-size: 18px;
+            border-style: none;
+            background-color: white;
+        }
+
+        button:active{
+
+            background-color: #0097a7;
+            color: white;
+        }
+
+        #nav button{
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18pt;
+            box-shadow: 0 1px 2px #1F1F1F;
+            list-style-type: none;
+            width: 100%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            padding-left: 20%;
+            text-align: left;
+        }
+
+        .graphPane{
+            color: white;
+            text-align: center;
+            display: none;
+            width:90%;
+        }
+
+        .cardMenu{
+
+            margin-left: 5%;
+
+        }
 
     </style>
 
 </head>
 <body>
 
-<h1 id="header">
+
+<div id="header">
     Tab-Tracker
-</h1>
+</div>
+<div id="container">
+    <ul id="nav">
 
-<ul id="nav">
-    <li> Add</li>
-    <li> Remove</li>
-    <li> Manage</li>
-    <li> About</li>
-</ul>
+        <li><button>Add</button></li>
+        <li><button>Manage</button></li>
+        <li><button>About</button></li>
+        <li><button>Share</button></li>
+        <li><button>About</button></li>
+    </ul>
 
-<ul id="body">
-    <li id="BodyAdd">
+    <ul id="content">
 
-
-        <div class="card">
-            <h2>
-                www.reddit.com/r/deoxyribonucleicacid
-
-            </h2>
-
-            <h3>
-
-                234 Hits
-            </h3>
-
-            <button>
-                Remove
-            </button>
-            <button>
-                Reset
-            </button>
-            <button>
-                Graph
-            </button>
-
-        </div>
-
-        <div class="card">
-            <h2>
-                www.facebook.com
-
-            </h2>
-
-            <h3>
-
-                234 Hits
-            </h3>
-
-            <button>
-                Remove
-            </button>
-            <button>
-                Reset
-            </button>
-            <button>
-                Graph
-            </button>
-
-        </div>
+        <li>
+            <div class="contentCard">
+                <h2> www.reddit.com</h2>
+                <h3>24 hits since 11/11/14 1:12 PM</h3>
+                <canvas class = "graphPane" id = "chart" >
 
 
-    </li>
+                </canvas>
+
+                <div class = "cardMenu">
+                    <button class = "reset">Reset</button>
+                    <button class = "remove">Remove</button>
+                    <button class = "graph">Graph</button>
+                </div>
+            </div>
+
+            <div class="contentCard">
+                <h2> www.reddit.com</h2>
+                <h3>24 hits since 11/11/14 1:12 PM</h3>
+                <canvas class = "graphPane" id = "chart" >
 
 
-</ul>
+                </canvas>
+
+                <div class = "cardMenu">
+                    <button class = "reset">Reset</button>
+                    <button class = "remove">Remove</button>
+                    <button class = "graph">Graph</button>
+                </div>
+            </div>
+
+            <div class="contentCard">
+                <h2> www.reddit.com</h2>
+                <h3>24 hits since 11/11/14 1:12 PM</h3>
+                <canvas class = "graphPane" id = "chart" >
+
+
+                </canvas>
+
+                <div class = "cardMenu">
+                    <button class = "reset">Reset</button>
+                    <button class = "remove">Remove</button>
+                    <button class = "graph">Graph</button>
+                </div>
+            </div>
+
+            <div class="contentCard">
+                <h2> www.reddit.com</h2>
+                <h3>24 hits since 11/11/14 1:12 PM</h3>
+                <canvas class = "graphPane" id = "chart" >
+
+
+                </canvas>
+
+                <div class = "cardMenu">
+                    <button class = "reset">Reset</button>
+                    <button class = "remove">Remove</button>
+                    <button class = "graph">Graph</button>
+                </div>
+            </div>
+
+            <div class="contentCard">
+                <h2> www.reddit.com</h2>
+                <h3>24 hits since 11/11/14 1:12 PM</h3>
+                <canvas class = "graphPane" id = "chart" >
+
+
+                </canvas>
+
+                <div class = "cardMenu">
+                    <button class = "reset">Reset</button>
+                    <button class = "remove">Remove</button>
+                    <button class = "graph">Graph</button>
+                </div>
+            </div>
+        </li>
+
+
+    </ul>
+
+
+</div>
+
 
 </body>
 </html>
