@@ -2,8 +2,6 @@
  * Created by Nick on 12/28/2014.
  */
 
-
-
 chrome.extension.getBackgroundPage().buildHitData("www.unca.edu", function(data){
 
     var margin = {top: 10, right: 10, bottom: 100, left: 40},
@@ -57,42 +55,43 @@ chrome.extension.getBackgroundPage().buildHitData("www.unca.edu", function(data)
         .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
 
 
-        console.log(data);
-        x.domain(d3.extent(data.map(function(d) { return d.date; })));
-        y.domain([0, d3.max(data.map(function(d) { return d.hits; }))]);
-        x2.domain(x.domain());
-        y2.domain(y.domain());
+    /**Interpret and append data **/
 
-        focus.append("path")
-            .datum(data)
-            .attr("class", "area")
-            .attr("d", area);
+    x.domain(d3.extent(data.map(function(d) { return d.date; })));
+    y.domain([0, d3.max(data.map(function(d) { return d.hits; }))]);
+    x2.domain(x.domain());
+    y2.domain(y.domain());
 
-        focus.append("g")
-            .attr("class", "x axis")
-            .attr("transform", "translate(0," + height + ")")
-            .call(xAxis);
+    focus.append("path")
+        .datum(data)
+        .attr("class", "area")
+        .attr("d", area);
 
-        focus.append("g")
-            .attr("class", "y axis")
-            .call(yAxis);
+    focus.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
 
-        context.append("path")
-            .datum(data)
-            .attr("class", "area")
-            .attr("d", area2);
+    focus.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
 
-        context.append("g")
-            .attr("class", "x axis")
-            .attr("transform", "translate(0," + height2 + ")")
-            .call(xAxis2);
+    context.append("path")
+        .datum(data)
+        .attr("class", "area")
+        .attr("d", area2);
 
-        context.append("g")
-            .attr("class", "x brush")
-            .call(brush)
-            .selectAll("rect")
-            .attr("y", -6)
-            .attr("height", height2 + 7);
+    context.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height2 + ")")
+        .call(xAxis2);
+
+    context.append("g")
+        .attr("class", "x brush")
+        .call(brush)
+        .selectAll("rect")
+        .attr("y", -6)
+        .attr("height", height2 + 7);
 
 
     function brushed() {
