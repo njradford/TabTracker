@@ -110,6 +110,7 @@ function urlObject(url) {
     if (url != null) {
         this.url = url;
     } else {
+
         this.url = "www.facebook.com";
 
     }
@@ -189,7 +190,6 @@ function fetchSyncedURLS(callback) {
  */
 function listURLS() {
 
-
     fetchSyncedURLS(
         function (URLS) {
             for (i = 0; i < URLS.length; i++) {
@@ -197,6 +197,97 @@ function listURLS() {
             }
         }
     )
+}
+
+function buildHitData(URL, callback) {
+
+
+    return fetchSyncedURLS(function (data) {
+
+        var sortedHits;
+        var hits;
+        contains = false;
+
+        /**
+         * Fetches the current URL's data from the cloud storage
+         */
+        for (i = 0; i < data.length; i++) {
+            if (data[i].url == URL) {
+                hits = data[i].dates;
+                contains = true;
+                break;
+            }
+        }
+
+        if (!contains) {
+            return null;
+        }
+
+        comparator = new Date(hits[0]);
+        comparatorHitCount = 1;
+
+        /**
+         * Strip all time data less than hour
+         */
+        comparator.setMilliseconds(00);
+        comparator.setSeconds(00);
+        comparator.setMinutes(00);
+
+        for (i = 1; i < hits.length; i++) {
+
+
+            current = new Date(hits[i]);
+
+
+            current.setMilliseconds(00);
+            current.setSeconds(00);
+            current.setMinutes(00);
+
+
+
+            if (current.getTime() == comparator.getTime()) {
+                comparatorHitCount++;
+            } else {
+
+                bucket = {};
+
+
+                bucket.hits = comparatorHitCount;
+                bucket.date = comparator;
+                comparatorHitCount = 1;
+
+                comparator = current;
+
+                if (sortedHits == null) {
+
+                    sortedHits = [bucket];
+
+                } else {
+
+                    sortedHits.push(bucket);
+                }
+            }
+
+        }
+
+        bucket = {};
+
+
+        bucket.hits = comparatorHitCount;
+        bucket.date = comparator;
+
+        if (sortedHits == null) {
+
+            sortedHits = [bucket];
+
+        } else {
+
+            sortedHits.push(bucket);
+        }
+
+        console.log(sortedHits);
+        callback(sortedHits);
+    })
 
 }
 /**
