@@ -7,8 +7,9 @@
 
     <script type="text/javascript" src="libs/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="libs/jquery.animate-colors-min.js"></script>
+    <script src="libs/d3.v3.min.js"></script>
+
     <script src="options_new.js"></script>
-    <script src="libs/d3.v3.js"></script>
 
     <title>Tab - Tracker | Options </title>
     <style>
@@ -204,13 +205,41 @@
             color: white;
             text-align: center;
             display: none;
-            height: 200px;
-            width:90%;
+            height: 550px;
+            width:100%;
         }
 
         .cardMenu{
 
             margin-left: 5%;
+
+        }
+
+
+        /*Graph Stylings*/
+        svg {
+            font: 10px sans-serif;
+        }
+
+        .area {
+            fill: #0097a7;
+            clip-path: url(#clip);
+        }
+
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+
+        .brush .extent {
+            stroke: #fff;
+            fill-opacity: .125;
+            shape-rendering: crispEdges;
+        }
+
+        svg{
 
         }
 
@@ -249,12 +278,14 @@
                     <button class = "graph">Graph</button>
                 </div>
             </div>
-
-
         </li>
 
 
+
     </ul>
+
+
+
 
 
 </div>

@@ -229,20 +229,40 @@ function buildHitData(URL, callback) {
         /**
          * Strip all time data less than hour
          */
-        comparator.setMilliseconds(00);
-        comparator.setSeconds(00);
-        comparator.setMinutes(00);
 
+        comparator.setMinutes(00, 00, 00);
+
+
+        /**
+         * Builds an array of blank hours to avoid scaling the browsing history in the graph
+         */
+
+
+        var between = [];
+
+        var date1 = new Date(hits[0]);
+        date1.setMinutes(00,00,00);
+
+
+        var date2 = new Date(hits[hits.length-1]);
+
+        date2.setMinutes(00 , 00 , 00);
+
+        while(date1.valueOf() <  date2.valueOf()) {
+
+            date1.setHours( date1.getHours()+1);
+            between.push(new Date(date1.valueOf()));
+        }
+
+
+        /**
+         * Group hit data into hours
+         */
         for (i = 1; i < hits.length; i++) {
-
 
             current = new Date(hits[i]);
 
-
-            current.setMilliseconds(00);
-            current.setSeconds(00);
-            current.setMinutes(00);
-
+            current.setMinutes(00, 00, 00);
 
 
             if (current.getTime() == comparator.getTime()) {
@@ -285,8 +305,43 @@ function buildHitData(URL, callback) {
             sortedHits.push(bucket);
         }
 
-        console.log(sortedHits);
-        callback(sortedHits);
+
+        /**
+         * Weave together the blank and sorted legitimate data
+         */
+
+
+        finalData = [sortedHits[0]];
+
+        j = 1;
+
+        for ( i = 0; i < between.length; i ++) {
+
+            if( between[i].valueOf() == sortedHits[j].date.valueOf() ) {
+
+                console.log("true");
+
+                finalData.push(sortedHits[j]);
+
+                j ++;
+
+            } else {
+
+                bucket = {};
+
+                bucket.hits = 0;
+                bucket.date = between[i];
+
+                finalData.push(bucket);
+
+            }
+
+        }
+
+        console.log(finalData);
+
+
+        callback(finalData);
     })
 
 }
