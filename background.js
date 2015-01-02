@@ -1,7 +1,5 @@
 var URLDATA;
-var sessionDict = {};
 var hitCount;
-var threshHold;
 
 
 /**
@@ -42,29 +40,36 @@ chrome.tabs.onUpdated.addListener(
 
             fetchSyncedURLS(function (data) {
 
-                for (i = 0; i < data.length; i++) {
+                if (data != null) {
 
-                    if (data[i].url == currentURL) {
-                        data[i].hits++;
+                    for (i = 0; i < data.length; i++) {
 
-                        if (data[i].dates == null) {
+                        if (data[i].url == currentURL) {
 
-                            data[i].dates = [Date.now()]
+                            console.log(data[i].url + " == " + currentURL);
+                            data[i].hits++;
 
-                        } else {
+                            if (data[i].dates == null) {
 
-                            data[i].dates.push(Date.now());
+                                data[i].dates = [Date.now()]
+
+                            } else {
+
+                                data[i].dates.push(Date.now());
+
+                            }
+
+
+                            URLDATA = data;
+                            syncURLS();
+
+                            calculateHits();
 
                         }
-
-
-                        URLDATA = data;
-                        syncURLS();
-
-                        calculateHits();
-
                     }
+
                 }
+
             })
         }
     }
@@ -105,7 +110,7 @@ function urlObject(url) {
     this.dates = [];
 
 
-    this.startDate = d.getUTCMonth() + "/" + d.getUTCDate() + "/" + d.getUTCFullYear();
+    this.startDate = d.valueOf();
 
     if (url != null) {
         this.url = url;
@@ -165,6 +170,9 @@ function syncURLS() {
         console.log("SYNCED ");
         chrome.storage.sync.get("URLS", function (callback) {
             console.log(callback.URLS);
+
+            URLDATA == callback.URLS;
+            calculateHits();
         })
     })
 }
@@ -241,16 +249,16 @@ function buildHitData(URL, callback) {
         var between = [];
 
         var date1 = new Date(hits[0]);
-        date1.setMinutes(00,00,00);
+        date1.setMinutes(00, 00, 00);
 
 
-        var date2 = new Date(hits[hits.length-1]);
+        var date2 = new Date(hits[hits.length - 1]);
 
-        date2.setMinutes(00 , 00 , 00);
+        date2.setMinutes(00, 00, 00);
 
-        while(date1.valueOf() <  date2.valueOf()) {
+        while (date1.valueOf() < date2.valueOf()) {
 
-            date1.setHours( date1.getHours()+1);
+            date1.setHours(date1.getHours() + 1);
             between.push(new Date(date1.valueOf()));
         }
 
@@ -315,15 +323,15 @@ function buildHitData(URL, callback) {
 
         j = 1;
 
-        for ( i = 0; i < between.length; i ++) {
+        for (i = 0; i < between.length; i++) {
 
-            if( between[i].valueOf() == sortedHits[j].date.valueOf() ) {
+            if (between[i].valueOf() == sortedHits[j].date.valueOf()) {
 
                 console.log("true");
 
                 finalData.push(sortedHits[j]);
 
-                j ++;
+                j++;
 
             } else {
 
@@ -337,8 +345,6 @@ function buildHitData(URL, callback) {
             }
 
         }
-
-        console.log(finalData);
 
 
         callback(finalData);
@@ -356,6 +362,7 @@ function resetURL(URL) {
         for (i = 0; i < data.length; i++) {
             if (data[i].url == URL) {
                 data[1].hits = 0;
+                data[1].startDate = new Date().valueOf();
                 URLDATA = data;
                 syncURLS();
             }
@@ -376,6 +383,7 @@ function removeURL(URL) {
                 data.splice(i, 1);
                 URLDATA = data;
                 syncURLS();
+                calculateHits()
             }
         }
     })

@@ -70,10 +70,6 @@
             text-decoration: none;
         }
 
-        button:focus {
-
-            outline: none;
-        }
 
         button {
             font-family: 'Roboto-Light', sans-serif;
@@ -81,12 +77,18 @@
             font-size: 18px;
             border-style: none;
             background-color: white;
+            outline: none;
         }
 
         button:active {
 
             background-color: #0097a7;
             color: white;
+        }
+
+        .contentCard button:active {
+
+            background-color: #0097a7;a
         }
 
         #content li {
@@ -103,9 +105,7 @@
             color: white;
             text-align: center;
             box-shadow: 0px 2.25px 3px #3B3B3B;
-
             margin: auto;
-
         }
 
         #nav {
@@ -150,7 +150,6 @@
         }
 
 
-
         h2::-webkit-scrollbar {
             height: 5px;;
             background-color: lightgray;
@@ -178,7 +177,6 @@
         }
 
         .contentCard h3 {
-
             margin-bottom: 5%;
             margin-left: 5%;
         }
@@ -213,14 +211,12 @@
 
 
         #nav .active  {
-
             color: white;
             background-color: #0097a7;
 
         }
 
         #nav .active a {
-
             color: white;
         }
 
@@ -234,9 +230,7 @@
         }
 
         .cardMenu {
-
             margin-left: 5%;
-
         }
 
         /*Graph Stylings*/
@@ -277,6 +271,13 @@
 
         }
 
+        .contentCard p {
+
+            font-size: 18pt;
+            padding-left: 5%;
+        }
+
+
 
     </style>
 
@@ -313,7 +314,7 @@
 
             <div class="contentCard">
                 <h2> Add a URL to track</h2>
-                <form>
+                <form id ="URLFORM">
                     <input type = "text" name ="addURL" >
                 </form>
             </div>
@@ -321,6 +322,12 @@
         </li>
 
         <li class = "manage">
+            <div id = "reminder" class = "contentCard">
+                <h2> You aren't tracking any URLS</h2>
+
+                <p><i>Go to the 'Add URL' tab or use the pop up <br>
+                    to start tracking sites</i></p>
+            </div>
 
 
         </li>

@@ -31,13 +31,13 @@ function buildGraph(url, target){
             .on("brush", brushed);
 
         var area = d3.svg.area()
-            .interpolate("monotone")
+            .interpolate("step")
             .x(function(d) { return x(d.date); })
             .y0(height)
             .y1(function(d) { return y(d.hits); });
 
         var area2 = d3.svg.area()
-            .interpolate("monotone")
+            .interpolate("step")
             .x(function(d) { return x2(d.date); })
             .y0(height2)
             .y1(function(d) { return y2(d.hits); });
@@ -107,13 +107,6 @@ function buildGraph(url, target){
             console.log(x.ticks())
         }
 
-        function type(d) {
-            d.date = new Date(Math.round(d.date));
-            console.log(d.date);
-            d.hits = +d.hits;
-            return d;
-        }
-
     })
 
 
@@ -123,6 +116,7 @@ function buildGraph(url, target){
 
 
 $(document).ready(function() {
+
 
     $("#content li").hide(0);
 
@@ -138,8 +132,56 @@ $(document).ready(function() {
     })
 
     /**
-     * Modify default action for form submit
+     * Reset URL listener
      */
+    $("body").on('click', "button.reset", function(){
+
+        chrome.extension.getBackgroundPage().resetURL($(this).parent().parent().data("host"))
+
+        date = new Date();
+
+        hours = date.getHours();
+
+        time = (hours % 12 || 12 )+":"+date.getMinutes();
+
+        if( hours > 12 ) {
+            time = time + " PM";
+        } else {
+            time = time + " AM";
+        }
+
+
+        time = "0 hits since "+time + " on " + date.toDateString();
+
+        $(this).parent().parent().find("h3").html(time);
+    })
+
+
+    /**
+     * Remove URL Listener
+     */
+    $("body").on('click', "button.remove", function(){
+
+        chrome.extension.getBackgroundPage().removeURL($(this).parent().parent().data("host"))
+
+        $(this).parent().parent().fadeOut(1000);
+    })
+
+
+
+    /**
+     * AJAX method to prevent form from resetting the page on submit
+     */
+    $("#URLFORM").submit(function(e){
+        e.preventDefault();
+        var NEW_URL = $("#URLFORM").find("input").val();
+
+        document.getElementById("URLFORM").reset();
+
+        console.log(NEW_URL);
+        chrome.extension.getBackgroundPage().addURL(NEW_URL);
+
+    });
 
 
     /**
@@ -154,7 +196,8 @@ $(document).ready(function() {
             buildManagePage();
         } else {
 
-            $("li.manage").empty();
+
+            $( ".manage .contentCard" ).not( document.getElementById( "reminder")).remove();
 
         }
 
@@ -177,38 +220,67 @@ function buildManagePage() {
     chrome.extension.getBackgroundPage().fetchSyncedURLS(function(data){
 
 
-        for ( i = 0; i < data.length; i++) {
+        if( data != null){
 
-            obj = data[i];
+            for ( i = 0; i < data.length; i++) {
 
-            h = obj.hits;
+                obj = data[i];
 
-            u = obj.url;
-            d = obj.startDate;
+                h = obj.hits;
 
-            var card = $('<div class="contentCard" data-host='+ u +'>'+
-            '<h2>'+ u +' </h2>'+
-            '<h3>'+ h +' hits since '+ d +'</h3>'+
-            '<div class="graphPane">'+
-            '</div>'+
-            '<div class="cardMenu">'+
-            '<button class="reset">Reset</button>'+
-            '<button class="remove">Remove</button>'+
-            '<button class="graph">Graph</button>'+
-            '</div>'+
-            '</div>');
+                u = obj.url;
 
-            $("li.manage").append(card);
+                date = new Date(obj.startDate);
 
-            target = card.find(".graphPane");
+                hours = date.getHours();
 
-            test = d3.selectAll(target.toArray());
+                time = (hours % 12 || 12 )+":"+date.getMinutes();
 
-            buildGraph(u, test);
+                if( hours > 12 ) {
+                    time = time + " PM";
+                } else {
+                    time = time + " AM";
 
+                }
+
+
+                time = time + " on " + date.toDateString();
+
+                var card = $('<div class="contentCard" data-host='+ u +'>'+
+                '<h2>'+ u +' </h2>'+
+                '<h3>'+ h +' hits since '+ time +'</h3>'+
+                '<div class="graphPane">'+
+                '</div>'+
+                '<div class="cardMenu">'+
+                '<button class="reset">Reset</button>'+
+                '<button class="remove">Remove</button>'+
+                '<button class="graph">Graph</button>'+
+                '</div>'+
+                '</div>');
+
+                $("li.manage").append(card);
+
+                target = card.find(".graphPane");
+
+                test = d3.selectAll(target.toArray());
+
+                buildGraph(u, test);
+
+
+            }
 
         }
 
+        console.log($("#content li.manage").children().length);
+
+        if( $("#content li.manage").children().length  > 1 ) {
+
+            $("#reminder").hide();
+
+        } else {
+            $("#reminder").show();
+
+        }
 
     });
 
