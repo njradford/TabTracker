@@ -14,12 +14,11 @@ chrome.runtime.onInstalled.addListener(
     function () {
 
         console.log("Tab Tracker background page starting");
-        chrome.storage.sync.get("URLS", function (callback) {
-            console.log(callback.URLS);
+        chrome.storage.local.get("URLS", function (callback) {
             if (callback.URLS != null) {
                 URLDATA = callback.URLS;
             } else {
-                console.log("NO CLOUD DATA FOUND");
+                console.log("NO DATA FOUND");
             }
             chrome.browserAction.setBadgeBackgroundColor({color: "#000000"});
             calculateHits();
@@ -46,7 +45,6 @@ chrome.tabs.onUpdated.addListener(
 
                         if (data[i].url == currentURL) {
 
-                            console.log(data[i].url + " == " + currentURL);
                             data[i].hits++;
 
                             if (data[i].dates == null) {
@@ -166,11 +164,9 @@ function checkIfTracking(URL) {
  */
 function syncURLS() {
     console.log("SYNCING DATA. . . ");
-    chrome.storage.sync.set({"URLS": URLDATA}, function (callback) {
+    chrome.storage.local.set({"URLS": URLDATA}, function (callback) {
         console.log("SYNCED ");
-        chrome.storage.sync.get("URLS", function (callback) {
-            console.log(callback.URLS);
-
+        chrome.storage.local.get("URLS", function (callback) {
             URLDATA == callback.URLS;
             calculateHits();
         })
@@ -187,7 +183,7 @@ function syncURLS() {
  */
 function fetchSyncedURLS(callback) {
 
-    chrome.storage.sync.get("URLS", function (data) {
+    chrome.storage.local.get("URLS", function (data) {
         callback(data.URLS);
         URLDATA = data.URLS;
     })
@@ -263,6 +259,8 @@ function buildHitData(URL, callback) {
         }
 
 
+
+
         /**
          * Group hit data into hours
          */
@@ -327,8 +325,6 @@ function buildHitData(URL, callback) {
 
             if (between[i].valueOf() == sortedHits[j].date.valueOf()) {
 
-                console.log("true");
-
                 finalData.push(sortedHits[j]);
 
                 j++;
@@ -346,6 +342,23 @@ function buildHitData(URL, callback) {
 
         }
 
+
+        lastDate = finalData[finalData.length-1].date;
+
+        currentDate = new Date();
+
+        currentDate.setMinutes(0,0,0);
+
+        if( !(currentDate.getTime() == lastDate.getTime()) ) {
+
+
+            bucket = {};
+
+            bucket.hits = 0;
+            bucket.date = currentDate;
+            finalData.push(bucket);
+
+        }
 
         callback(finalData);
     })
@@ -379,14 +392,14 @@ function removeURL(URL) {
     fetchSyncedURLS(function (data) {
 
         for (i = 0; i < data.length; i++) {
-            if (data[i].url == URL) {
-                data.splice(i, 1);
-                URLDATA = data;
-                syncURLS();
-                calculateHits()
-            }
+        if (data[i].url == URL) {
+            data.splice(i, 1);
+            URLDATA = data;
+            syncURLS();
+            calculateHits()
         }
-    })
+    }
+})
 }
 
 
@@ -397,7 +410,7 @@ function removeURL(URL) {
 function resetURLS() {
 
     URLDATA = null;
-    chrome.storage.sync.remove("URLS");
+    chrome.storage.local.remove("URLS");
     calculateHits();
 
 }
@@ -422,7 +435,7 @@ function calculateHits() {
     chrome.browserAction.setBadgeText({text: hitCount.toString()});
 
 
-    if (hitCount + 1 > 6) {
+    if (false ) {
 
         chrome.notifications.create("Tab Tracker", {
 

@@ -17,7 +17,7 @@
     "notifications"
   ],
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["background.js", "Options_Page/libs/URI.js-gh"],
     "persistent": true
   },
 

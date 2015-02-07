@@ -7,9 +7,11 @@
 
     <script type="text/javascript" src="libs/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="libs/jquery.animate-colors-min.js"></script>
+    <script type="text/javascript" src="libs/URI.js/src/URI.min.js"></script>
     <script src="libs/d3.v3.min.js"></script>
 
     <script src="options_new.js"></script>
+    <script src="URITest.js"></script>
 
     <title>Tab - Tracker | Options </title>
     <style>
@@ -256,7 +258,7 @@
             shape-rendering: crispEdges;
         }
 
-        input{
+        input#add{
 
             color:darkslategrey;
             padding-left: 5px;
@@ -268,6 +270,11 @@
             background-color: #fdfdfd;
             font-size: 22pt;
             box-shadow: inset 0 0 4px #6f6f6f;
+        }
+
+        #donate{
+            padding-left: 5%;
+            padding-top: 5%;
 
         }
 
@@ -315,7 +322,7 @@
             <div class="contentCard">
                 <h2> Add a URL to track</h2>
                 <form id ="URLFORM">
-                    <input type = "text" name ="addURL" >
+                    <input id = "add" type = "text" name ="addURL" >
                 </form>
             </div>
 
@@ -348,6 +355,13 @@
         <li class = "donate">
             <div class="contentCard">
                 <h2> Buy Me A Coffee</h2>
+                <form id = "donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="EDCLYJVJLTWC8">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+
             </div>
         </li>
 
