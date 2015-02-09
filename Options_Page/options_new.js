@@ -31,13 +31,13 @@ function buildGraph(url, target){
             .on("brush", brushed);
 
         var area = d3.svg.area()
-            .interpolate("step")
+            .interpolate("linear")
             .x(function(d) { return x(d.date); })
             .y0(height)
             .y1(function(d) { return y(d.hits); });
 
         var area2 = d3.svg.area()
-            .interpolate("step")
+            .interpolate("linear")
             .x(function(d) { return x2(d.date); })
             .y0(height2)
             .y1(function(d) { return y2(d.hits); });
@@ -179,8 +179,15 @@ $(document).ready(function() {
         document.getElementById("URLFORM").reset();
 
         console.log(NEW_URL);
-        chrome.extension.getBackgroundPage().addURL(NEW_URL);
+        newURL = chrome.extension.getBackgroundPage().getURI("https://"+NEW_URL);
 
+        chrome.getBackgroundPage().checkIfTracking( newURL.host(), function(t){
+
+            if (!t) {
+                chrome.extension.getBackgroundPage().addURL(newURL.host());
+            }
+
+        })
     });
 
 

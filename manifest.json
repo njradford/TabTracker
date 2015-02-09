@@ -7,7 +7,7 @@
     }
   ],
   "description": "Track your activity on distracting sites",
-  "version": "0.0",
+  "version": "0.4",
   "permissions": [
     "activeTab",
     "webNavigation",
@@ -17,7 +17,7 @@
     "notifications"
   ],
   "background": {
-    "scripts": ["background.js", "Options_Page/libs/URI.js-gh"],
+    "scripts": ["background.js", "Options_Page/libs/URI.js/src/URI.min.js"],
     "persistent": true
   },
 

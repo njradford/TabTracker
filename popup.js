@@ -1,67 +1,53 @@
+chrome.tabs.query({currentWindow: true, active: true}, function (tabs) {
 
-chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
+    currentURL = chrome.extension.getBackgroundPage().getURI(tabs[0].url);
 
-    currentURL = chrome.extension.getBackgroundPage().regex(tabs[0].url);
+    protocol = currentURL.protocol();
+    console.log(protocol);
 
-    console.log(currentURL);
-    if(currentURL != null) {
+    if (protocol.indexOf("http") === 0) {
 
-        chrome.extension.getBackgroundPage().fetchSyncedURLS(function(d){
 
-            tracking = false;
-            for ( i = 0; i < d.length; i++ ) {
+        chrome.extension.getBackgroundPage().checkIfTracking(currentURL.host(), function(t){
 
-                if(currentURL == d[i].url) {
-
-                    tracking = true;
-                    break;
-                }
-            }
-
-            console.log(tracking);
-
-            if ( tracking ) {
-
+            if (t) {
                 $("#question").html("Already Tracking");
-                $("#hero").html(currentURL);
+                $("#hero").html(currentURL.host());
                 $("button#track").hide();
-
             } else {
-
                 $("#question").html("Start Tracking");
-                $("#hero").html(currentURL+"?");
-
+                $("#hero").html(currentURL.host() + "?");
             }
 
+        });
 
-        })
 
     } else {
         $("#question").html("Cannot Track Current Site");
         $("#hero").html(currentURL);
-        $("button#track").hide();
+        $("#track").hide();
 
+        z
     }
-
 
 
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
 
-    $("button#track").click(function(){
+    $("button#track").click(function () {
 
         $(this).fadeOut(500);
-        chrome.extension.getBackgroundPage().addURL(currentURL);
+        chrome.extension.getBackgroundPage().addURL(currentURL.host());
         $("#question").html("Now Tracking . . . ");
         $("#hero").html(currentURL);
 
-    })
+    });
 
-    $("button#options").click(function(){
+    $("button#options").click(function () {
 
         chrome.tabs.create({url: "/Options_Page/options_new.html"});
     })
 
 
-})
+});

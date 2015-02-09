@@ -35,7 +35,11 @@ chrome.tabs.onUpdated.addListener(
         //Only register events that are completed
         if (changeInfo.status == "complete") {
 
-            currentURL = regex(tab.url);
+            var currentURL = new URI(tab.url);
+
+            currentURL = currentURL.host();
+
+            console.log(currentURL);
 
             fetchSyncedURLS(function (data) {
 
@@ -79,20 +83,9 @@ chrome.tabs.onUpdated.addListener(
  * @param inputUrl
  * @returns {*}
  */
-function regex(inputUrl) {
+function getURI(inputUrl) {
 
-    var txt = inputUrl;
-
-    var re1 = '.*?';	// Non-greedy match on filler
-    var re2 = '((?:[a-z][a-z\\.\\d_]+)\\.(?:[a-z\\d]{3}))(?![\\w\\.])';	// File Name 1
-
-    var p = new RegExp(re1 + re2, ["i"]);
-    var m = p.exec(txt);
-
-    if (m != null) {
-
-        return m[1];
-    }
+    return new URI(inputUrl);
 }
 
 
@@ -184,8 +177,11 @@ function syncURLS() {
 function fetchSyncedURLS(callback) {
 
     chrome.storage.local.get("URLS", function (data) {
-        callback(data.URLS);
+
         URLDATA = data.URLS;
+
+        callback(data.URLS);
+
     })
 }
 
@@ -451,6 +447,61 @@ function calculateHits() {
 
     }
 }
+
+function simulateData() {
+
+    var sampleURL = new urlObject("www.reddit.com");
+    var startDate = new Date(1422750343000);
+    var current = new Date();
+
+    sampleURL.startDate = startDate.valueOf();
+
+    startDate.setMinutes(00 , 00 , 00);
+    current.setMinutes( 00 , 00 , 00);
+
+    while (startDate.valueOf() != current.valueOf()) {
+        startDate.setMinutes( startDate.getMinutes() + 1);
+
+        if(Math.random() > .97) {
+            sampleURL.dates.push(startDate.valueOf());
+        }
+    }
+
+    sampleURL.hits = sampleURL.dates.length;
+    URLDATA.push(sampleURL);
+    console.log(sampleURL);
+
+    syncURLS();
+}
+
+/**
+ * Exclude the protocol from the String URL
+ * @param url
+ */
+function checkIfTracking(url, callback){
+
+    fetchSyncedURLS(function (d) {
+        tracking = false;
+
+        if (d != null) {
+
+            for (i = 0; i < d.length; i++) {
+
+                if (url == d[i].url) {
+
+                    tracking = true;
+                    break;
+                }
+            }
+        }
+
+        callback(tracking);
+
+    })
+
+}
+
+
 
 
 

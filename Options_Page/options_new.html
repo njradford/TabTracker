@@ -11,7 +11,6 @@
     <script src="libs/d3.v3.min.js"></script>
 
     <script src="options_new.js"></script>
-    <script src="URITest.js"></script>
 
     <title>Tab - Tracker | Options </title>
     <style>
@@ -273,16 +272,18 @@
         }
 
         #donate{
-            padding-left: 5%;
+            padding-left: 10%;
             padding-top: 5%;
 
         }
 
         .contentCard p {
 
-            font-size: 18pt;
+            font-size: 16pt;
             padding-left: 5%;
+            padding-right: 5%;
         }
+
 
 
 
@@ -308,9 +309,6 @@
             <a href="#about"><button class = "about" >About</button></a>
         </li>
         <li>
-            <a href="#share"><button class = "share" >Share</button></a>
-        </li>
-        <li>
             <a href="#donate"><button class = "donate" >Donate</button></a>
         </li>
     </ul>
@@ -321,6 +319,7 @@
 
             <div class="contentCard">
                 <h2> Add a URL to track</h2>
+                <p><i>Please omit the protocol ("https" or "http")</i></p>
                 <form id ="URLFORM">
                     <input id = "add" type = "text" name ="addURL" >
                 </form>
@@ -331,7 +330,6 @@
         <li class = "manage">
             <div id = "reminder" class = "contentCard">
                 <h2> You aren't tracking any URLS</h2>
-
                 <p><i>Go to the 'Add URL' tab or use the pop up <br>
                     to start tracking sites</i></p>
             </div>
@@ -342,6 +340,28 @@
         <li class = "about">
             <div class="contentCard">
                 <h2> Why This Exists:</h2>
+                    <br>
+                <p>  For one reason or another, no matter how interesting of a project
+                    i'm working on, I always find a way to end up back on Reddit or
+                    similar sites. Having tried extensions that actively block these
+                    sites, I realized it benefited me more to have more of an odometer
+                    system to see exactly how many times I consciously left my work to
+                    look at photos of cats.
+                </p>
+                    <br>
+                <p> Additionally, certain productivity apps make a habit of sending browsing
+                    activity to ad servers. TabTracker doesn't rely on any external data
+                    processing and keeps all of your browsing activity local.
+
+                    If for one reason or another, you end up not being a fan of TabTracker,
+                    I personally recommend any of the following extensions which might be
+                    more what you're looking for:
+                    <br>
+                    <br>
+                    <a href="https://chrome.google.com/webstore/detail/stayfocusd/laankejkbhbdhmipfmgcngdelahlfoji">Stay Focused</a>
+                    <br>
+                    <a href="https://chrome.google.com/webstore/detail/be-limitless/jdpnljppdhjpafeaokemhcggofohekbp">Be Limitless</a>
+                </p>
 
             </div>
         </li>
@@ -354,7 +374,7 @@
 
         <li class = "donate">
             <div class="contentCard">
-                <h2> Buy Me A Coffee</h2>
+                <h2> Buy Me A Coffee?</h2>
                 <form id = "donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_s-xclick">
                     <input type="hidden" name="hosted_button_id" value="EDCLYJVJLTWC8">
